@@ -1,0 +1,19 @@
+{
+  "name": "free-bells",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "libs/*"
+    ]
+  },
+  "scripts": {
+    "dev:api": "docker-compose --env-file .env.dev -f docker-compose.dev.yaml up",
+    "dev:back": "lerna run start:dev --stream",
+    "dev:front": "lerna run serve --stream"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
