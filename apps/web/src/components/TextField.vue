@@ -1,6 +1,6 @@
 <template>
   <div class="text-field">
-    <input v-bind="$attrs" type="text" class="text-field__input" :class="{'text-field__input_error': error}">
+    <input v-bind="$attrs" :type="type" class="text-field__input" :class="{'text-field__input_error': error}">
     <p v-if="error" class="text-field__error">{{ error }}</p>
   </div>
 </template>
@@ -8,7 +8,8 @@
 <script>
 export default {
   props: [
-      'error'
+      'error',
+      'type'
   ],
 name: "TextField"
 }
