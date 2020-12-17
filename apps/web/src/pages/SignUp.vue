@@ -76,6 +76,8 @@ export default {
 
 .sign-up {
   padding-top: 12vh;
+  box-sizing: border-box;
+  min-height: 99.99vh;
 }
 
 .sign-up-form {
