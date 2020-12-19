@@ -62,6 +62,7 @@ h1{
   padding-top: 12vh;
   box-sizing: border-box;
   min-height: 99.99vh;
+  background-color: #f3e1e3;
 }
 
 .registration-form {

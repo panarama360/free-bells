@@ -1,43 +1,58 @@
 <template>
   <div>
-    <header class="header">
-      <div class="">
-        <span class="logo">FreeBell</span>
-      </div>
-      <div class="user-information"></div>
-    </header>
-    <nav>
 
-    </nav>
-    <main>
-      <router-view></router-view>
-    </main>
-    <footer>
-
-    </footer>
+    <div class="container">
+      <nav class="navigation">
+        <img class="logo" src="../assets/bell.png"/>
+        <SideMenu/>
+      </nav>
+      <header class="header">
+      </header>
+      <main class="main">
+        <router-view></router-view>
+      </main>
+    </div>
   </div>
 </template>
 
 <script>
+import SideMenu from "../components/SideMenu";
 export default {
-name: "DashboardLayout"
+name: "DashboardLayout",
+  components: {SideMenu}
 }
 </script>
 
 <style scoped>
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.main{
+  padding-left: 10em;
+  padding-top: 10em;
+  padding-right: 3em;
+  background-color: #F8F8FB;
+}
+.navigation{
+  position: fixed;
+  height: 100%;
+  width: 100px;
+  background-color: #373B53;
+  box-sizing: border-box;
+}
 .logo{
-  font-size: 2em;
-  font-weight: bold;
-  font-family: Arial;
+  /*background-image: url("../assets/bell.png");*/
+  width: 100px;
+  height: 100px;
+  background-color: #6F52ED;
 }
 .header{
-  display:flex;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  margin-left: 100px;
   background-color: white;
-  height: 2em;
-  flex-direction: row;
-  align-items: center;
-  block-size: border-box;
-  padding: 1em;
-  justify-content: space-between;
+  box-sizing: border-box;
 }
 </style>

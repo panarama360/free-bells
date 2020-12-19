@@ -26,7 +26,6 @@ html, body{
   box-sizing: border-box;
 }
 #app{
-  background-color: #f3e1e3;
   box-sizing: border-box;
 }
 </style>

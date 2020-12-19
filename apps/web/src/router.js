@@ -2,6 +2,8 @@ import {createRouter, createWebHistory} from "vue-router";
 import SignUp from "./pages/SignUp";
 import Registration from "./pages/Registration";
 import DashboardLayout from "./pages/DashboardLayout";
+import Events from "./pages/Events";
+import Users from "./pages/Users";
 
 const routes = [
     {
@@ -22,13 +24,23 @@ const routes = [
             {
                 path:'',
                 name: "DashboardButtons",
+                component: Events
+            },
+            {
+                path: "buttons",
+                name: "DashboardButtons",
                 component: SignUp
             },
-            // {
-            //     path: "buttons",
-            //     name: "DashboardButtons",
-            //     component: SignUp
-            // }
+            {
+                path: "events",
+                name: "Events",
+                component: Registration
+            },
+            {
+                path: "users",
+                name: "User",
+                component: Users
+            }
         ]
     }
 ];
