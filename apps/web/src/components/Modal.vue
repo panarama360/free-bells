@@ -1,7 +1,7 @@
 <template>
-  <div class="modal_blur" @click="close()" v-if="modelValue">
+  <div class="modal_blur" @click.self="close()" v-if="modelValue">
       <div class="modal__window">
-        <slot v-bind:close="close"></slot>
+        <slot v-bind:close="close" ></slot>
       </div>
   </div>
 </template>
@@ -10,6 +10,7 @@
 export default {
   name: "Modal",
   emits: ['update:modelValue'],
+  // inheritAttrs: false,
   methods: {
     close(){
       this.$emit('update:modelValue', false);
@@ -38,7 +39,7 @@ export default {
   max-height: 50vh;
   min-height: 20vh;
   background-color: white;
-
+  z-index: 100;
   border-radius: 10px;
   box-shadow: 0 5px 0 #EDEDF6;
   box-sizing: border-box;

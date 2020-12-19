@@ -8,7 +8,7 @@
       </div>
       <div class="right-form">
         <span class="registration-text m-1">Registration</span>
-        <TextField class="m-1" placeholder="Email"/>
+        <TextField class="m-1" placeholder="Email" type="text"/>
         <TextField class="m-1" placeholder="Пароль" type="password"/>
         <TextField class="m-1" placeholder="Повторить пароль" type="password"/>
         <Button class="m-1" text="Registration"/>

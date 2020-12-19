@@ -1,6 +1,10 @@
 <template>
-  <div class="text-field">
-    <input v-bind="$attrs" :type="type" class="text-field__input" :class="{'text-field__input_error': error}">
+  <div class="text-field" v-bind:class="$attrs.class">
+    <input v-bind="$attrs"
+           :checked="modelValue"
+           @input="$emit('update:modelValue', $event.target.value)"
+           class="text-field__input"
+           :class="{'text-field__input_error': error}">
     <p v-if="error" class="text-field__error">{{ error }}</p>
   </div>
 </template>
@@ -9,9 +13,10 @@
 export default {
   props: [
       'error',
-      'type'
+      'modelValue'
   ],
-name: "TextField"
+  inheritAttrs: false,
+  name: "TextField"
 }
 </script>
 

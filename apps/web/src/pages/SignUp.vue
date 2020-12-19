@@ -3,8 +3,8 @@
     <div class="sign-up-form">
       <div class="left-form">
         <span class="login-text m-1">Login In</span>
-        <TextField class="m-1" placeholder="Email"/>
-        <TextField class="m-1" placeholder="Пароль" type="password"/>
+        <TextField class="m-1" v-model="email" placeholder="Email"/>
+        <TextField class="m-1" v-model="password" placeholder="Пароль" type="password"/>
         <a href="#" class="forgot-password">Забыли пароль?</a>
         <Button class="m-1" text="LOG IN"/>
       </div>
@@ -23,7 +23,13 @@ import TextField from "../components/TextField";
 
 export default {
   name: "SignUp",
-  components: {TextField, Button}
+  components: {TextField, Button},
+  data(){
+    return {
+      email: '',
+      password: '',
+    }
+  }
 }
 </script>
 

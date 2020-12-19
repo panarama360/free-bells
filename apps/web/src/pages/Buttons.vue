@@ -2,17 +2,11 @@
   <div class="buttons-page">
     <page-description page-description="Тут можно настроить кноки на стринице которые видят клиенты" page-name="Кнопки">
       <template v-slot:actions>
-        <DashboardButton style="margin-right: 1em">
+        <DashboardButton colored>
           <template v-slot:icon>
             <i class="fas fa-plus"></i>
           </template>
           <span>Добавить</span>
-        </DashboardButton>
-        <DashboardButton colored>
-          <template v-slot:icon>
-            <i class="fas fa-save"></i>
-          </template>
-          <span>Сохранить</span>
         </DashboardButton>
       </template>
     </page-description>

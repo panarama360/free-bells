@@ -2,13 +2,11 @@
   <div class="user-page">
     <page-description page-description="На этой стрице можно добавлять работников" page-name="Работники">
       <template v-slot:actions>
-        <DashboardButton colored>
+        <DashboardButton @click="addUser = {}" colored>
           <template v-slot:icon>
-            <svg style="display: block; margin: auto; height: 100%;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 11.1429H11.1429V18H8.85714V11.1429H2V8.85714H8.85714V2H11.1429V8.85714H18V11.1429Z" fill="white"/>
-            </svg>
+            <i class="fas fa-plus"></i>
           </template>
-          <span>Добавить нового пользователя</span>
+          <span>Добавить</span>
         </DashboardButton>
       </template>
     </page-description>
@@ -17,6 +15,13 @@
         <UserCard post="Директор" user-name="Сурков Иван"></UserCard>
       </div>
     </div>
+    <Modal v-model="addUser">
+      <div class="modal">
+        <TextField placeholder="Имя" v-model="addUser.name"></TextField>
+        <TextField placeholder="Должность" v-model="addUser.post"></TextField>
+        <DashboardButton colored @click="test">Сохранить</DashboardButton>
+      </div>
+    </Modal>
   </div>
 </template>
 
@@ -24,26 +29,49 @@
 import UserCard from "../components/UserCard";
 import PageDescription from "../components/PageDescription";
 import DashboardButton from "../components/DashboardButton";
+import Modal from "../components/Modal";
+import TextField from "../components/TextField";
+
 export default {
-name: "Users",
-  components: {DashboardButton, PageDescription, UserCard}
+  name: "Users",
+  components: {TextField, Modal, DashboardButton, PageDescription, UserCard},
+  methods: {
+    test() {
+      alert(JSON.stringify(this.addUser));
+      this.addUser = undefined;
+    }
+  },
+  data() {
+    return {
+      addUser: undefined
+    }
+  }
 }
 </script>
 
 <style scoped>
-.exist-users{
+.modal {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  gap: 1em;
+}
+
+.exist-users {
   margin-top: 2em;
   display: flex;
   flex-wrap: wrap;
   gap: 2%
 }
-.exist-user__item{
+
+.exist-user__item {
   box-sizing: border-box;
   flex-basis: 32%;
   height: 6em;
   margin-bottom: 2%;
 }
-.exist-users__item__add{
+
+.exist-users__item__add {
   cursor: pointer;
   display: flex;
 }
