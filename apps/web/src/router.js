@@ -4,6 +4,8 @@ import Registration from "./pages/Registration";
 import DashboardLayout from "./pages/DashboardLayout";
 import Events from "./pages/Events";
 import Users from "./pages/Users";
+import Settings from "./pages/Settings";
+import Buttons from "./pages/Buttons";
 
 const routes = [
     {
@@ -28,13 +30,13 @@ const routes = [
             },
             {
                 path: "buttons",
-                name: "DashboardButtons",
-                component: SignUp
+                name: "Buttons",
+                component: Buttons
             },
             {
-                path: "events",
-                name: "Events",
-                component: Registration
+                path: "settings",
+                name: "Settings",
+                component: Settings
             },
             {
                 path: "users",

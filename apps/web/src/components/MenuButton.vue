@@ -20,6 +20,9 @@ name: "MenuButton",
   border-radius: 10px;
   background-color: transparent;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   padding: 0;
   box-sizing: border-box;

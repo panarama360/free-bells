@@ -1,8 +1,8 @@
 <template>
   <button class="dashboard-button" :class="{'not-colored': !colored, 'colored': colored}">
     <div class="dashboard-button__content">
-      <div v-if="!!$slots.icon"><slot name="icon"></slot></div>
-      <div style="vertical-align: center"><slot></slot></div>
+      <div class="icon" v-if="!!$slots.icon"><slot name="icon"></slot></div>
+      <div><slot></slot></div>
     </div>
   </button>
 </template>
@@ -17,6 +17,9 @@ name: "DashboardButton",
 </script>
 
 <style scoped>
+.icon{
+  margin-right: 1em;
+}
 .dashboard-button__content{
   display: flex;
   justify-content: center;
@@ -26,7 +29,6 @@ name: "DashboardButton",
   background-color: transparent;
   border: none;
   font-size: 1em;
-  font-family: 'Khula', sans-serif;
   padding: 1em;
   cursor: pointer;
   border-radius: .3em;

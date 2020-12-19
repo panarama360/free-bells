@@ -1,12 +1,12 @@
 <template>
   <div>
-
     <div class="container">
       <nav class="navigation">
         <img class="logo" src="../assets/bell.png"/>
         <SideMenu/>
       </nav>
       <header class="header">
+        <CurrentAccount organisation="smoking" user="Сурков Иван"></CurrentAccount>
       </header>
       <main class="main">
         <router-view></router-view>
@@ -17,9 +17,10 @@
 
 <script>
 import SideMenu from "../components/SideMenu";
+import CurrentAccount from "../components/CurrentAccount";
 export default {
 name: "DashboardLayout",
-  components: {SideMenu}
+  components: {CurrentAccount, SideMenu}
 }
 </script>
 
@@ -33,6 +34,7 @@ name: "DashboardLayout",
   padding-top: 10em;
   padding-right: 3em;
   background-color: #F8F8FB;
+  box-sizing: border-box;
 }
 .navigation{
   position: fixed;
@@ -42,14 +44,17 @@ name: "DashboardLayout",
   box-sizing: border-box;
 }
 .logo{
-  /*background-image: url("../assets/bell.png");*/
   width: 100px;
   height: 100px;
   background-color: #6F52ED;
 }
 .header{
   position: fixed;
-  width: 100%;
+  display: flex;
+  width: calc(100% - 100px);
+  flex-direction: row-reverse;
+  padding: 1em;
+  justify-content: space-between;
   height: 100px;
   margin-left: 100px;
   background-color: white;
