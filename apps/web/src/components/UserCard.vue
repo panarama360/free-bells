@@ -1,7 +1,7 @@
 <template>
   <Card class="user-card">
     <span class="user-card__name">{{ userName }}</span>
-    <span class="user-card__post">{{ post }}</span>
+    <span class="user-card__post">{{ post }} ({{ email }})</span>
     <button class="user-card__delete"></button>
   </Card>
 </template>
@@ -13,7 +13,8 @@ name: "UserCard",
   components: {Card},
   props: [
       'userName',
-      'post'
+      'post',
+      'email'
   ]
 }
 </script>

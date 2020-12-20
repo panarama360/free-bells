@@ -12,13 +12,14 @@
     </page-description>
     <div class="exist-users">
       <div class="exist-user__item">
-        <UserCard post="Директор" user-name="Сурков Иван"></UserCard>
+        <UserCard post="Директор" email="panarama360@gmail.com" user-name="Сурков Иван"></UserCard>
       </div>
     </div>
     <Modal v-model="addUser">
       <div class="modal">
         <TextField placeholder="Имя" v-model="addUser.name"></TextField>
         <TextField placeholder="Должность" v-model="addUser.post"></TextField>
+        <TextField placeholder="Email" type="email" v-model="addUser.email"></TextField>
         <DashboardButton colored @click="test">Сохранить</DashboardButton>
       </div>
     </Modal>
